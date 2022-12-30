@@ -1,13 +1,11 @@
 <template>
     <button :class="color ? 'bg-blue-500 hover:bg-blue-600' : 'bg-red-500 hover:bg-red-700'"
-            class="p-5 rounded-md text-2xl flex flex-col"
+            class="p-5 rounded-md md:text-2xl md:font-normal font-bold flex flex-col"
             @click="handleClick(choice.choiceId)"
             :disabled="resultsVisible"
             >
             <span v-if="resultsVisible" class="font-bold">
                 {{ votePercentage }}%
-                <span v-if="clicked">Agree</span>
-                <span v-else>Disagree</span>
             </span>
             <span>{{ choice.msg }}</span>
     </button>
@@ -29,14 +27,13 @@ export default {
     },
     methods: {
         handleClick(id) {
-            this.clicked = true;
             this.$emit('handle-vote', id);
         }
     },
     computed: {
         votePercentage() {
             return Math.floor((this.choice.votes / this.totalVotes) * 100);
-        }
+        },
     },
     emits: ['handle-vote'],
 }

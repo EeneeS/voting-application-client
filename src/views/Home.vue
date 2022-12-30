@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col text-center h-screen justify-center overflow-hidden -mt-40">
+  <div class="flex flex-col text-center md:h-screen justify-center overflow-hidden md:-mt-40 mt-8">
     <ul>
       <Dilemma></Dilemma>
     </ul>

@@ -3,7 +3,7 @@
         <h2 class="text-4xl">Dilemma:</h2>
         <i v-if="waitingForNetwork" class="fa-solid fa-spinner fa-spin fa-5x text-white text-center mt-8" style="--fa-flip-x: 1; --fa-flip-y: 0;"></i>
         <div v-else>
-            <h3 class="mb-4 mt-2 text-3xl font-bold">{{ dilemma.dilemma }}</h3>
+            <h3 class="mb-4 mt-2 md:text-3xl font-bold">{{ dilemma.dilemma }}</h3>
             <div class="flex flex-col md:flex-row gap-6 justify-center">
                 <Choice v-if="choice1" :choice="choice1" :dilemmaId="dilemma.id" @handle-vote="handleVote" :totalVotes="totalVotes" :resultsVisible="resultsVisible" :color="true"></Choice>
                 <Choice v-if="choice2" :choice="choice2" :dilemmaId="dilemma.id" @handle-vote="handleVote" :totalVotes="totalVotes" :resultsVisible="resultsVisible" :color="false"></Choice>
@@ -13,7 +13,7 @@
     <div v-if="resultsVisible">
         <button 
         @click="nextDilemma"
-        class="bg-red-500 mt-16 px-8 py-4 rounded-md text-white font-bold"
+        class="bg-red-500 mt-16 px-8 py-4 rounded-md text-white font-bold md:mb-0 mb-8"
         >next >
         </button>
     </div>
